@@ -2,18 +2,48 @@
 import React, { useEffect, useState } from 'react';
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Cake } from "lucide-react";
+import { Cake, PartyPopper } from "lucide-react";
 import CountdownTimer from './CountdownTimer';
+import Confetti from 'react-confetti';
+import { useToast } from "@/hooks/use-toast";
 
 const HeroBanner: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
+  const { toast } = useToast();
   
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
+  const handleCelebrate = () => {
+    setShowConfetti(true);
+    
+    toast({
+      title: "It's celebration time! 🎉",
+      description: "Happy Birthday Isha! Wishing you joy, laughter, and all the happiness in the world.",
+      variant: "default",
+      duration: 5000,
+    });
+    
+    // Automatically stop confetti after some time
+    setTimeout(() => {
+      setShowConfetti(false);
+    }, 6000);
+  };
+
   return (
     <div className="relative min-h-[80vh] flex flex-col items-center justify-center overflow-hidden px-4">
+      {showConfetti && (
+        <Confetti
+          width={window.innerWidth}
+          height={window.innerHeight}
+          recycle={false}
+          numberOfPieces={500}
+          colors={['#E63946', '#FFD700', '#FFCCD5', '#FFF1E6', '#C1121F']}
+        />
+      )}
+      
       <div className={`absolute inset-0 z-0 bg-rose-light bg-opacity-20 ${isVisible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
         <div className="absolute inset-0 bg-[url('/public/lovable-uploads/ff281cc7-dbad-4488-badf-4ce24d70b7f7.png')] bg-cover bg-center opacity-20"></div>
       </div>
@@ -38,7 +68,11 @@ const HeroBanner: React.FC = () => {
           
           <CountdownTimer />
           
-          <Button className="mt-6 bg-rose hover:bg-rose-dark text-white font-medium px-8 py-6 text-lg rounded-full animation-delay-700 animate-fade-in">
+          <Button 
+            onClick={handleCelebrate}
+            className="mt-6 bg-gradient-to-r from-rose to-gold hover:from-rose-dark hover:to-gold text-white font-medium px-8 py-6 text-lg rounded-full animation-delay-700 animate-fade-in transition-all duration-300 hover:scale-105 hover:shadow-lg group"
+          >
+            <PartyPopper className="w-5 h-5 mr-2 group-hover:animate-bounce" />
             Celebrate With Us
           </Button>
         </div>
