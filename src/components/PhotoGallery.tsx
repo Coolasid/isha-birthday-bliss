@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { Images, Arrow } from "lucide-react";
+import { Images, ArrowRight, ArrowLeft } from "lucide-react";
 
 const photos = [
   "/public/lovable-uploads/ff281cc7-dbad-4488-badf-4ce24d70b7f7.png",
@@ -63,14 +63,14 @@ const PhotoGallery: React.FC = () => {
                     onClick={handlePrev}
                     className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 rounded-full p-2 backdrop-blur-sm transition-colors duration-300"
                   >
-                    <Arrow className="w-6 h-6 text-white" rotate={180} />
+                    <ArrowLeft className="w-6 h-6 text-white" />
                   </button>
                   
                   <button 
                     onClick={handleNext}
                     className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 rounded-full p-2 backdrop-blur-sm transition-colors duration-300"
                   >
-                    <Arrow className="w-6 h-6 text-white" />
+                    <ArrowRight className="w-6 h-6 text-white" />
                   </button>
                 </div>
               </DialogContent>
