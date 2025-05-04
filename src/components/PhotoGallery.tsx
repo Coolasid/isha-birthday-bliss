@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Card } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle, DialogDescription, DialogTrigger } from "@/components/ui/dialog";
 import { Images, ArrowRight, ArrowLeft } from "lucide-react";
 
 const photos = [
@@ -41,7 +41,10 @@ const PhotoGallery: React.FC = () => {
           {photos.map((photo, index) => (
             <Dialog key={index}>
               <DialogTrigger asChild>
-                <Card className="overflow-hidden cursor-pointer transform hover:scale-105 transition-transform duration-300 shadow-md hover:shadow-xl">
+                <Card 
+                  className="overflow-hidden cursor-pointer transform hover:scale-105 transition-transform duration-300 shadow-md hover:shadow-xl"
+                  onClick={() => setCurrentPhoto(index)}
+                >
                   <div className="aspect-square w-full">
                     <img 
                       src={photo} 
@@ -52,6 +55,8 @@ const PhotoGallery: React.FC = () => {
                 </Card>
               </DialogTrigger>
               <DialogContent className="max-w-4xl p-0 border-none bg-transparent">
+                <DialogTitle className="sr-only">Photo View</DialogTitle>
+                <DialogDescription className="sr-only">View full-size photo</DialogDescription>
                 <div className="relative w-full bg-black/90 backdrop-blur-xl rounded-lg overflow-hidden">
                   <img 
                     src={photos[currentPhoto]} 
