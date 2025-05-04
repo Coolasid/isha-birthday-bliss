@@ -10,12 +10,12 @@ import {
 import { Images, ArrowRight, ArrowLeft } from "lucide-react";
 
 const photos = [
-  "https://drive.google.com/file/d/1HeWKEVrflclyXUHKkpS6XIoH0h60Nebg/view?usp=sharing",
-  "https://drive.google.com/file/d/16WCoViKlrySLWuNHky_eecNd6jDzo3KD/view?usp=sharing",
-  "https://drive.google.com/file/d/1F8FLclKg0myXOMa7RcUTa46iJYbomELm/view?usp=sharing",
-  "https://drive.google.com/file/d/1EGCVho4WEx4L500Qua8lP90aCeqU0TjH/view?usp=sharing",
-  "https://drive.google.com/file/d/1Q-_re0cZKE5308vn9MnZUHkZaDc8cBf0/view?usp=sharing",
-  "https://drive.google.com/file/d/1jkntVU-VQMBxvt-J9ifDQEVk3PZEwEPs/view?usp=sharing",
+  "https://github.com/Coolasid/isha-birthday-bliss/blob/main/IMG_20250504_230627.jpg?raw=true",
+  "https://github.com/Coolasid/isha-birthday-bliss/blob/main/IMG_20250504_230645.jpg?raw=true",
+  "https://github.com/Coolasid/isha-birthday-bliss/blob/main/IMG_20250504_230713.jpg?raw=true",
+  "https://github.com/Coolasid/isha-birthday-bliss/blob/main/IMG_20250504_230800.jpg?raw=true",
+  "https://github.com/Coolasid/isha-birthday-bliss/blob/main/IMG_20250504_230821.jpg?raw=true",
+  "https://github.com/Coolasid/isha-birthday-bliss/blob/main/IMG_20250504_230842.jpg?raw=true",
 ];
 
 const PhotoGallery: React.FC = () => {
