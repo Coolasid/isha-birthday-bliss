@@ -10,12 +10,12 @@ import {
 import { Images, ArrowRight, ArrowLeft } from "lucide-react";
 
 const photos = [
-  "https://github.com/Coolasid/isha-birthday-bliss/blob/main/IMG_20250504_230627.jpg?raw=true",
-  "https://github.com/Coolasid/isha-birthday-bliss/blob/main/IMG_20250504_230645.jpg?raw=true",
-  "https://github.com/Coolasid/isha-birthday-bliss/blob/main/IMG_20250504_230713.jpg?raw=true",
-  "https://github.com/Coolasid/isha-birthday-bliss/blob/main/IMG_20250504_230800.jpg?raw=true",
-  "https://github.com/Coolasid/isha-birthday-bliss/blob/main/IMG_20250504_230821.jpg?raw=true",
-  "https://github.com/Coolasid/isha-birthday-bliss/blob/main/IMG_20250504_230842.jpg?raw=true",
+  "../../IMG_20250504_230627.jpg",
+  "../../IMG_20250504_230645.jpg",
+  "../../IMG_20250504_230713.jpg",
+  "../../IMG_20250504_230800.jpg",
+  "../../IMG_20250504_230821.jpg",
+  "../../IMG_20250504_230842.jpg",
 ];
 
 const PhotoGallery: React.FC = () => {
